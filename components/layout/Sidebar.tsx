@@ -12,6 +12,8 @@ import {
   ChevronDown,
   ChevronRight,
   Database,
+  Download,
+  FileClock,
   LayoutDashboard,
   LogOut,
   ShieldCheck,
@@ -19,8 +21,8 @@ import {
   Target,
   UserCircle,
   Users,
+  Wrench,
   X,
-  FileClock,
 } from "lucide-react";
 
 import type { AdminRole } from "@/types/admin";
@@ -156,6 +158,52 @@ const administrationGroups: NavigationGroup[] = [
   },
 
   {
+    label: "App Updates",
+    icon: Download,
+    roles: ["super_admin"],
+    children: [
+      {
+        label: "Manage Update",
+        href: "/app-updates",
+        icon: Download,
+        roles: ["super_admin"],
+      },
+      {
+        label: "Update List",
+        href: "/app-updates-list",
+        icon: FileClock,
+        roles: ["super_admin"],
+      },
+    ],
+  },
+
+  {
+    label: "Maintenance",
+    icon: Wrench,
+    roles: ["super_admin"],
+    children: [
+      {
+        label: "Manage Maintenance",
+        href: "/maintenance",
+        icon: Wrench,
+        roles: ["super_admin"],
+      },
+      {
+        label: "Maintenance List",
+        href: "/maintenance-list",
+        icon: FileClock,
+        roles: ["super_admin"],
+      },
+      {
+        label: "Details",
+        href: "/maintenance/details",
+        icon: FileClock,
+        roles: ["super_admin"],
+      },
+    ],
+  },
+
+  {
     label: "Database",
     icon: Database,
     roles: ["super_admin", "admin"],
@@ -267,7 +315,24 @@ export function Sidebar({ open, onClose }: SidebarProps) {
   }
 
   function isChildActive(href: string) {
-    return pathname === href || pathname.startsWith(`${href}/`);
+    const matches = allGroups
+      .filter((group) => canSeeGroup(group))
+      .flatMap((group) => group.children)
+      .filter((child) => canSeeChild(child))
+      .filter(
+        (child) =>
+          pathname === child.href || pathname.startsWith(`${child.href}/`),
+      );
+
+    if (matches.length === 0) {
+      return false;
+    }
+
+    const mostSpecificMatch = matches.reduce((current, candidate) => {
+      return candidate.href.length > current.href.length ? candidate : current;
+    });
+
+    return mostSpecificMatch.href === href;
   }
 
   function isGroupActive(group: NavigationGroup) {
