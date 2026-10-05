@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+:root {
+  --niramaya-bg: #f6f7f3;
+  --niramaya-surface: #ffffff;
+  --niramaya-primary: #315c4a;
+  --niramaya-primary-dark: #244839;
+  --niramaya-accent: #d9e7dc;
+  --niramaya-text: #17221d;
+  --niramaya-muted: #718078;
+  --niramaya-border: #e4e9e5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--niramaya-bg);
+  color: var(--niramaya-text);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+::selection {
+  background: var(--niramaya-accent);
+  color: var(--niramaya-primary-dark);
+}
