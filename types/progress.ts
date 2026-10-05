@@ -76,4 +76,3 @@ export interface ProgressFormValues {
   notes: string;
   completedActivities: string[];
 }
-a

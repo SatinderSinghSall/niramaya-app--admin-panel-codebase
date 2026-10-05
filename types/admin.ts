@@ -2,6 +2,7 @@ export type AdminRole = "super_admin" | "admin" | "content_manager" | "support";
 
 export interface Admin {
   id: string;
+  _id?: string;
   firstName: string;
   lastName: string;
   email: string;

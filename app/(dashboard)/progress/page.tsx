@@ -493,8 +493,10 @@ export default function ProgressPage() {
     ];
 
     numericFields.forEach(([formKey, payloadKey]) => {
-      if (values[formKey].trim() !== "") {
-        payload[payloadKey] = Number(values[formKey]);
+      const value = values[formKey];
+
+      if (typeof value === "string" && value.trim() !== "") {
+        payload[payloadKey] = Number(value);
       }
     });
 
