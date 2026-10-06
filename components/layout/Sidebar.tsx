@@ -11,11 +11,14 @@ import {
   CalendarDays,
   ChevronDown,
   ChevronRight,
+  CirclePlus,
   Database,
   Download,
   FileClock,
+  HeartPulse,
   LayoutDashboard,
   LogOut,
+  Megaphone,
   ShieldCheck,
   Sparkles,
   Target,
@@ -172,6 +175,46 @@ const administrationGroups: NavigationGroup[] = [
         label: "Update List",
         href: "/app-updates-list",
         icon: FileClock,
+        roles: ["super_admin"],
+      },
+    ],
+  },
+
+  {
+    label: "Announcements",
+    icon: Megaphone,
+    roles: ["super_admin"],
+    children: [
+      {
+        label: "Add Announcement",
+        href: "/add-announcements",
+        icon: Megaphone,
+        roles: ["super_admin"],
+      },
+      {
+        label: "Announcement List",
+        href: "/view-announcements",
+        icon: FileClock,
+        roles: ["super_admin"],
+      },
+    ],
+  },
+
+  {
+    label: "Health & Wellness",
+    icon: HeartPulse,
+    roles: ["super_admin"],
+    children: [
+      {
+        label: "Wellness Tips",
+        href: "/health-wellness-tips",
+        icon: HeartPulse,
+        roles: ["super_admin"],
+      },
+      {
+        label: "Add Wellness Tips",
+        href: "/add-health-wellness-tip",
+        icon: CirclePlus,
         roles: ["super_admin"],
       },
     ],

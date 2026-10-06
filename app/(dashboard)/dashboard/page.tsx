@@ -6,6 +6,7 @@ import {
   ActivitySquare,
   ArrowUpRight,
   Bell,
+  Megaphone,
   BookOpen,
   CalendarDays,
   CheckCircle2,
@@ -366,6 +367,18 @@ const collectionConfig: Record<
     description: "Application configuration records",
     icon: SlidersHorizontal,
     iconClassName: "bg-violet-50 text-violet-600",
+  },
+  announcements: {
+    label: "Announcements",
+    description: "Platform announcement records",
+    icon: Megaphone,
+    iconClassName: "bg-sky-50 text-sky-600",
+  },
+  healthwellnesstips: {
+    label: "Health & Wellness",
+    description: "Health and wellness tip records",
+    icon: HeartPulse,
+    iconClassName: "bg-emerald-50 text-emerald-600",
   },
   maintenances: {
     label: "Maintenance",
