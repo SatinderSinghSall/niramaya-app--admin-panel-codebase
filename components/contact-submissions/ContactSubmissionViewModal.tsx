@@ -17,7 +17,7 @@ import { getContactSubmissionById } from "@/lib/contact-submission-api";
 import type { ContactSubmission } from "@/types/contactSubmission";
 
 interface Props {
-  submission: ContactSubmission | null;
+  submission: ContactSubmission;
   open: boolean;
   onClose: () => void;
   onEdit: (submission: ContactSubmission) => void;
