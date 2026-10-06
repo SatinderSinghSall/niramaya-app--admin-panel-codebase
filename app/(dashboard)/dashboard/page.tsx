@@ -1,31 +1,34 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
+
 import {
   Activity,
+  ActivitySquare,
   ArrowUpRight,
   Bell,
   BookOpen,
   CalendarDays,
   CheckCircle2,
   CircleAlert,
+  Clock3,
   Database,
   FileText,
+  Gauge,
   Heart,
   HeartPulse,
   Leaf,
   RefreshCw,
+  Server,
   ShieldCheck,
+  SlidersHorizontal,
   Sparkles,
   Target,
   TrendingUp,
   UserCheck,
-  Server,
-  Clock3,
-  Gauge,
-  Zap,
-  ActivitySquare,
   Users,
+  Wrench,
   XCircle,
+  Zap,
   type LucideIcon,
 } from "lucide-react";
 import { useAdminAuth } from "@/context/AdminAuthContext";
@@ -357,6 +360,18 @@ const collectionConfig: Record<
     description: "Administration accounts",
     icon: ShieldCheck,
     iconClassName: "bg-[#edf5f0] text-[#315c4a]",
+  },
+  appConfigs: {
+    label: "App Config",
+    description: "Application configuration records",
+    icon: SlidersHorizontal,
+    iconClassName: "bg-violet-50 text-violet-600",
+  },
+  maintenances: {
+    label: "Maintenance",
+    description: "Maintenance configuration records",
+    icon: Wrench,
+    iconClassName: "bg-amber-50 text-amber-600",
   },
   apilogs: {
     label: "API Logs",
