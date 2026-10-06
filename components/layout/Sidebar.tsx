@@ -18,6 +18,7 @@ import {
   HeartPulse,
   LayoutDashboard,
   LogOut,
+  Mail,
   Megaphone,
   ShieldCheck,
   Sparkles,
@@ -215,6 +216,20 @@ const administrationGroups: NavigationGroup[] = [
         label: "Add Wellness Tips",
         href: "/add-health-wellness-tip",
         icon: CirclePlus,
+        roles: ["super_admin"],
+      },
+    ],
+  },
+
+  {
+    label: "Contact Submissions",
+    icon: Mail,
+    roles: ["super_admin"],
+    children: [
+      {
+        label: "Contact Submissions",
+        href: "/contact-submissions",
+        icon: Mail,
         roles: ["super_admin"],
       },
     ],

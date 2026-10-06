@@ -18,6 +18,7 @@ import {
   Heart,
   HeartPulse,
   Leaf,
+  Mail,
   RefreshCw,
   Server,
   ShieldCheck,
@@ -373,6 +374,12 @@ const collectionConfig: Record<
     description: "Platform announcement records",
     icon: Megaphone,
     iconClassName: "bg-sky-50 text-sky-600",
+  },
+  contactsubmissions: {
+    label: "Contact Submissions",
+    description: "Messages submitted through the Niramaya website",
+    icon: Mail,
+    iconClassName: "bg-emerald-50 text-emerald-600",
   },
   healthwellnesstips: {
     label: "Health & Wellness",
