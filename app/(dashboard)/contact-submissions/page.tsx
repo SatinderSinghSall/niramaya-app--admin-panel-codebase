@@ -1063,20 +1063,24 @@ export default function ContactSubmissionsPage() {
       </main>
 
       {/* View */}
-      <ContactSubmissionViewModal
-        submission={selected}
-        open={showViewModal}
-        onClose={closeModals}
-        onEdit={openEdit}
-      />
+      {selected && showViewModal && (
+        <ContactSubmissionViewModal
+          submission={selected}
+          open={showViewModal}
+          onClose={closeModals}
+          onEdit={openEdit}
+        />
+      )}
 
       {/* Edit */}
-      <ContactSubmissionEditModal
-        submission={selected}
-        open={showEditModal}
-        onClose={() => setShowEditModal(false)}
-        onSaved={handleSaved}
-      />
+      {selected && showEditModal && (
+        <ContactSubmissionEditModal
+          submission={selected}
+          open={showEditModal}
+          onClose={closeModals}
+          onSaved={handleSaved}
+        />
+      )}
     </>
   );
 }
